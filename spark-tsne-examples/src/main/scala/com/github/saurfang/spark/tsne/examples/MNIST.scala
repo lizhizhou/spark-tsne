@@ -22,7 +22,7 @@ object MNIST {
     val hadoopConf = sc.hadoopConfiguration
     val fs = FileSystem.get(hadoopConf)
 
-    val dataset = sc.textFile("data/MNIST/mnist.csv.gz")
+    val dataset = sc.textFile("data/mnist/mnist.csv.gz")
       .zipWithIndex()
       .filter(_._2 < 6000)
       .sortBy(_._2, true, 60)
